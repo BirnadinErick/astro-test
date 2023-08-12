@@ -1,0 +1,27 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout pageTitle={`${frontmatter.title} | Birnadin Erick`}>
+  <section class="mb-8 top-0">
+    <img
+      class=""
+      src={frontmatter.cover}
+      alt=`Cover Image for ${frontmatter.title}`
+    />
+  </section>
+
+  <main
+    class="prose-sm lg:prose-indigo lg:prose-lg prose-headings:font-serif prose-ol:list-decimal prose-ul:list-disc prose-em:text-indigo-600 prose-a:text-blue-500 prose-a:underline prose-a:underline-offset-4 prose-violet prose-img:mx-auto prose-img:rounded-sm prose-pre:rounded-sm"
+  >
+    <slot />
+  </main>
+</BaseLayout>
+
+<style>
+  :global(p) :global(code) {
+    @apply bg-gray-200 font-mono rounded-sm p-1 font-bold;
+  }
+</style>

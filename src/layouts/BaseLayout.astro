@@ -1,0 +1,52 @@
+---
+const { pageTitle } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+    <style>
+      body {
+        --swup-overlay-theme-color: black;
+        --swup-overlay-theme-duration: 0.6s;
+        --swup-overlay-theme-delay: 0.2s;
+        --swup-overlay-theme-scale: 1.2;
+        --swup-overlay-theme-skew: 10deg;
+      }
+    </style>
+  </head>
+  <body>
+    <header
+      class="bg-gray-200 py-4 p-8 lg:px-96 flex justify-between items-baseline"
+    >
+      <div class="flex space-x-3 text-2xl items-baseline">
+        <h2 class="font-bold">Birnadin Erick</h2>
+        <span class="text-gray-400">/</span>
+        <span class="text-lg">Enigma Bits</span>
+      </div>
+
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="/">Home</a></li>
+          <li><a href="https://www.birn.cc/me">About Me</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="mx-8 lg:mx-96 py-4" id="swup">
+      <slot />
+    </div>
+
+    <script>
+      import Swup from "swup";
+      import SwupOverlayTheme from "@swup/overlay-theme";
+
+      const swup = new Swup({
+        plugins: [new SwupOverlayTheme()],
+      });
+    </script>
+  </body>
+</html>
