@@ -3,9 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "node hello.js && astro dev --port 2003",
+    "dev": "astro dev --port 2003",
     "start": "astro dev",
-    "build": "node hello.js && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
